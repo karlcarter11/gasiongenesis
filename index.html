@@ -258,6 +258,30 @@ tr:hover td{background:#f7f9ff}
   </div>
 </div>
 
+<!-- Export Status Filter Modal -->
+<div class="overlay" id="export-overlay">
+  <div class="modal" style="max-width:480px;">
+    <h2 style="margin:0 0 12px 0;font-size:16px;">⬇️ Export Excel - Filter by Visit Status</h2>
+    <div style="margin:0;">
+      <p style="font-size:11px;color:#666;margin:0 0 10px 0;">Select which visit statuses to include:</p>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;">
+        <button id="exp_btn_all" class="exp-filter-btn exp-btn-all" onclick="toggleAllStatuses()" style="background:#666;color:#fff;border:none;padding:7px 12px;border-radius:5px;font-size:12px;font-weight:600;cursor:pointer;opacity:1;transition:all 0.2s;">All</button>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;background:#f7f8fc;padding:10px;border-radius:6px;">
+        <button id="exp_btn_visited" class="exp-filter-btn exp-btn-status" data-status="visited" onclick="toggleStatusButton('visited')" style="background:#f9a825;color:#fff;border:none;padding:7px 11px;border-radius:5px;font-size:12px;font-weight:500;cursor:pointer;opacity:1;transition:all 0.2s;flex:1;min-width:70px;display:flex;align-items:center;justify-content:center;">Visited</button>
+        <button id="exp_btn_opportunities" class="exp-filter-btn exp-btn-status" data-status="opportunities" onclick="toggleStatusButton('opportunities')" style="background:#ff5252;color:#fff;border:none;padding:7px 11px;border-radius:5px;font-size:12px;font-weight:500;cursor:pointer;opacity:1;transition:all 0.2s;flex:1;min-width:85px;display:flex;align-items:center;justify-content:center;">Opportunities</button>
+        <button id="exp_btn_customer" class="exp-filter-btn exp-btn-status" data-status="customer" onclick="toggleStatusButton('customer')" style="background:#2979ff;color:#fff;border:none;padding:7px 11px;border-radius:5px;font-size:12px;font-weight:500;cursor:pointer;opacity:1;transition:all 0.2s;flex:1;min-width:70px;display:flex;align-items:center;justify-content:center;">Customer</button>
+        <button id="exp_btn_installation" class="exp-filter-btn exp-btn-status" data-status="installation" onclick="toggleStatusButton('installation')" style="background:#00c853;color:#fff;border:none;padding:7px 11px;border-radius:5px;font-size:12px;font-weight:500;cursor:pointer;opacity:1;transition:all 0.2s;flex:1;min-width:80px;display:flex;align-items:center;justify-content:center;">Installation</button>
+        <button id="exp_btn_not_visited" class="exp-filter-btn exp-btn-status" data-status="not_visited" onclick="toggleStatusButton('not_visited')" style="background:#757575;color:#fff;border:none;padding:7px 11px;border-radius:5px;font-size:12px;font-weight:500;cursor:pointer;opacity:0.5;transition:all 0.2s;flex:1;min-width:75px;display:flex;align-items:center;justify-content:center;">Not Visited</button>
+      </div>
+      <div id="exp_error" style="color:#c62828;font-size:11px;margin-top:8px;display:none;">Please select at least one status.</div>
+    </div>
+    <div class="mbtn" style="margin-top:12px;">
+      <button class="bcancel" onclick="closeExportModal()">Cancel</button>
+      <button class="bsave" onclick="proceedWithExport()">Export</button>
+    </div>
+  </div>
+</div>
 
 <!-- Hospital Information Modal -->
 <div class="overlay" id="overlay">
